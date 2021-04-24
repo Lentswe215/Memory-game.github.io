@@ -13,7 +13,7 @@ let colorsOfCards = [
     "orange"
 ];
 
-let cards = [...document.querySelectorAll(".card")];
+let cards = [...document.querySelectorAll(".memory-card")];
 
 for (let color of colorsOfCards) {
     let cardAIndex = parseInt(Math.random() * cards.length);
@@ -52,10 +52,18 @@ function onCardClicked(e) {
             }, 1000);
         } else {
             clickedCard = null;
-            count++;
+          
+          setTimeout(()=>{  count++;
+            if (count == 8) {
+                alert("You Won!!!");
+            }
+        },500)
         }
     }
-    if (count == 8) {
-        alert("You Won!!!");
-    }
+    
 }
+
+$(function() {
+    var currentYear = new Date().getFullYear();
+    $("#footer-year").html(currentYear.toString());
+})

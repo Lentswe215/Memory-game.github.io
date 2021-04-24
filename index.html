@@ -1,42 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Memory Game</title>
     <link rel="stylesheet" href="./css/style.css">
-    <link  href="https://fonts.googleapis.com/css?family=Montserrat+Alternates"
-     rel="stylesheet">
-     </head>
-     <body>
-    <h1>MEMORY GAME </h1>
-    <div class="row-box">
-        <div onclick = "onCardClicked(event)" class="card frontCard-hidden"></div>
-        <div onclick = "onCardClicked(event)" class="card frontCard-hidden"></div>
-        <div onclick = "onCardClicked(event)" class="card frontCard-hidden"></div>
-        <div onclick = "onCardClicked(event)" class="card frontCard-hidden"></div>
-    </div>
-    <div class="row-box">
-        <div onclick = "onCardClicked(event)" class="card frontCard-hidden"></div>
-        <div onclick = "onCardClicked(event)" class="card frontCard-hidden"></div>
-        <div onclick = "onCardClicked(event)" class="card frontCard-hidden"></div>
-        <div onclick = "onCardClicked(event)" class="card frontCard-hidden"></div>
-    </div>
-    <div class="row-box">
-        <div onclick = "onCardClicked(event)" class="card frontCard-hidden"></div>
-        <div onclick = "onCardClicked(event)" class="card frontCard-hidden"></div>
-        <div onclick = "onCardClicked(event)" class="card frontCard-hidden"></div>
-        <div onclick = "onCardClicked(event)" class="card frontCard-hidden"></div>
-    </div>
-    <div class="row-box">
-        <div onclick = "onCardClicked(event)" class="card frontCard-hidden"></div>
-        <div onclick = "onCardClicked(event)" class="card frontCard-hidden"></div>
-        <div onclick = "onCardClicked(event)" class="card frontCard-hidden"></div>
-        <div onclick = "onCardClicked(event)" class="card frontCard-hidden"></div>
-    </div>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png">
+    <link rel="manifest" href="./icons/site.webmanifest">
+</head>
 
+<body class="bg-info">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href
+        ="#">
+            <img src="./icons/favicon-32x32.png" class="rounded" alt="">
+            <span class="brand-name">Memory Game</span>
+        </a>
+    </nav>
+    <div class="container px-4 my-3 ">
+        <div class="row-box">
+            <div onclick="onCardClicked(event)" class="memory-card frontCard-hidden"></div>
+            <div onclick="onCardClicked(event)" class="memory-card frontCard-hidden"></div>
+            <div onclick="onCardClicked(event)" class="memory-card frontCard-hidden"></div>
+            <div onclick="onCardClicked(event)" class="memory-card frontCard-hidden"></div>
+        </div>
+        <div class="row-box">
+            <div onclick="onCardClicked(event)" class="memory-card frontCard-hidden"></div>
+            <div onclick="onCardClicked(event)" class="memory-card frontCard-hidden"></div>
+            <div onclick="onCardClicked(event)" class="memory-card frontCard-hidden"></div>
+            <div onclick="onCardClicked(event)" class="memory-card frontCard-hidden"></div>
+        </div>
+        <div class="row-box">
+            <div onclick="onCardClicked(event)" class="memory-card frontCard-hidden"></div>
+            <div onclick="onCardClicked(event)" class="memory-card frontCard-hidden"></div>
+            <div onclick="onCardClicked(event)" class="memory-card frontCard-hidden"></div>
+            <div onclick="onCardClicked(event)" class="memory-card frontCard-hidden"></div>
+        </div>
+        <div class="row-box">
+            <div onclick="onCardClicked(event)" class="memory-card frontCard-hidden"></div>
+            <div onclick="onCardClicked(event)" class="memory-card frontCard-hidden"></div>
+            <div onclick="onCardClicked(event)" class="memory-card frontCard-hidden"></div>
+            <div onclick="onCardClicked(event)" class="memory-card frontCard-hidden"></div>
+        </div>
+
+    </div>
+<div class="footer fixed-bottom bg-dark text-white py-4 text-center">
+ Ephraim Mamonong &copy; <span id="footer-year"></span>
+</div>
+<script src="./javascript/jquery/jquery-3.4.1.min.js"></script>
+    <script src="./javascript/bootstrap.min.js"></script>
     <script src="./javascript/scripts.js"></script>
 
 </body>
+
 </html>

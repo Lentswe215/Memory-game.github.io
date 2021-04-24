@@ -3,10 +3,9 @@ body {
     height: 100vh;
     background: black;
 }
-h1 {
+.brand-name {
     text-align: center;
     color:rgb(198, 243, 198);
-    font-size: 400%;
     text-decoration: underline;
     font-family: "Montserrat Alternates";
     color: rgba(255, 255, 255, 0.884);
@@ -17,7 +16,7 @@ h1 {
     perspective: 100px;
 }
 
-.card {
+.memory-card {
     display: inline-block;
     width:100px;
     height: 100px;
@@ -26,23 +25,23 @@ h1 {
     transform-style: preserve-3d;
     transition: transform.5s;
 }
-.card:hover{
+.memory-card:hover{
     border: 1px solid black;
     opacity: 0.5;
 }
 
-.card:active {
+.memory-card:active {
     transform: scale(0.90);
     transition: transform.2s;
 }
 
-.card.done {
+.memory-card.done {
     cursor: default;
     transform: rotateY(180deg)
 
 }
 
-.card.done:hover{
+.memory-card.done:hover{
     border: 0px;
     opacity: 1;
 }
@@ -51,7 +50,7 @@ h1 {
     background-color: #ff5151;
 }
 .aqua {
-    background: #00a8cc;
+    background: #034757;
 }
 .orange {
     background-color: #ffa41b;
@@ -66,12 +65,31 @@ h1 {
     background-color: #040858;
 }
 .pink{
-    background-color: #a4079e;
+    background-color: #FF1493
+
+    ;
 }
 .purple {
     background-color: #480262;
 }
 
 .frontCard-hidden {
-    background-color: #6c7b95;
+    background-color: #07101f;
+}
+
+@media screen and (max-width: 480px) {
+    .memory-card{
+        width:70px !important;
+        height: 70px;
+    }
+    
+    .footer{
+        font-size: 12px;;
+    }
+}
+@media screen and (max-width: 320px) {
+    .memory-card{
+        width:60px !important;
+        height: 60px;
+    }
 }
