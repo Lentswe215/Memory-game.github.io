@@ -3,6 +3,7 @@ let preventClick = false;
 let count = 0;
 let isFirstClick = true;
 let moves = 0;
+let flipped = 0;
 let colorsOfCards = [
   "red",
   "blue",
@@ -67,15 +68,23 @@ function onCardClicked(e) {
           .trim();
         clickedCard = null;
         preventClick = false;
-      }, 1000);
+      }, 600);
     } else {
+      clickedCard.className = clickedCard.className
+        .replace("done", "flipped")
+        .trim();
+      target.className = target.className
+        .replace("done", "flipped")
+        .trim();
       clickedCard = null;
       count++;
-      moves++;
       if (count == 8) {
         StopClock();
       }
     }
+    moves++;
+
+    $("#movesID").html(moves);
   }
 }
 
@@ -94,46 +103,52 @@ function showTimer() {
   if (timeCount == 0) {
     StopClock();
 
+
     swal({
-        text: 'Search for a movie. e.g. "La La Land".',
-        content: "input",
-        button: {
-          text: "Search!",
-          closeModal: false,
-        },
-      })
-      .then(name => {
-        if (!name) throw null;
-       
-        return fetch(`https://itunes.apple.com/search?term=${name}&entity=movie`);
-      })
-      .then(results => {
-        return results.json();
-      })
-      .then(json => {
-        const movie = json.results[0];
-       
-        if (!movie) {
-          return swal("No movie was found!");
-        }
-       
-        const name = movie.trackName;
-        const imageURL = movie.artworkUrl100;
-       
-        swal({
-          title: "Top result:",
-          text: name,
-          icon: imageURL,
-        });
-      })
-      .catch(err => {
-        if (err) {
-          swal("Oh noes!", "The AJAX request failed!", "error");
-        } else {
-          swal.stopLoading();
-          swal.close();
-        }
-      });
+      title: "Game Over",
+      html: true,
+      text: "<h1>Hellpo workd</h1>"
+    })
+    // swal({
+    //     text: 'Search for a movie. e.g. "La La Land".',
+    //     content: "input",
+    //     button: {
+    //       text: "Search!",
+    //       closeModal: false,
+    //     },
+    //   })
+    //   .then(name => {
+    //     if (!name) throw null;
+
+    //     return fetch(`https://itunes.apple.com/search?term=${name}&entity=movie`);
+    //   })
+    //   .then(results => {
+    //     return results.json();
+    //   })
+    //   .then(json => {
+    //     const movie = json.results[0];
+
+    //     if (!movie) {
+    //       return swal("No movie was found!");
+    //     }
+
+    //     const name = movie.trackName;
+    //     const imageURL = movie.artworkUrl100;
+
+    //     swal({
+    //       title: "Top result:",
+    //       text: name,
+    //       icon: imageURL,
+    //     });
+    //   })
+    //   .catch(err => {
+    //     if (err) {
+    //       swal("Oh noes!", "The AJAX request failed!", "error");
+    //     } else {
+    //       swal.stopLoading();
+    //       swal.close();
+    //     }
+    //   });
   }
 }
 
@@ -142,5 +157,10 @@ function StartClock() {
 }
 
 function StopClock() {
+  $(".memory-card").addClass('inactive');
+  $(".done").each((idx, item) => {
+    $(item).removeClass("done");
+    $(item).addClass("frontCard-hidden");
+  })
   clearInterval(theTimer);
 }

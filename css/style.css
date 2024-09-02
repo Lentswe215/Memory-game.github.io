@@ -3,12 +3,13 @@ body {
     height: 100vh;
     background: black;
 }
+
 .brand-name {
     text-align: center;
-    color:rgb(198, 243, 198);
-    text-decoration: underline;
+    color: rgb(198, 243, 198);
     font-family: "Montserrat Alternates";
     color: rgba(255, 255, 255, 0.884);
+    text-transform: uppercase;
 }
 
 .row-box {
@@ -18,76 +19,96 @@ body {
 
 .memory-card {
     display: inline-block;
-    width:100px;
+    width: 100px;
     height: 100px;
     cursor: pointer;
     transform: scale(1);
     transform-style: preserve-3d;
     transition: transform.5s;
 }
-.memory-card:hover{
+
+.memory-card:hover {
     border: 1px solid black;
-    opacity: 0.5;
+    opacity: 0.8;
 }
 
 .memory-card:active {
-    transform: scale(0.90);
+    transform: scale(1);
     transition: transform.2s;
 }
 
-.memory-card.done {
+.memory-card.done,
+.memory-card.flipped {
     cursor: default;
     transform: rotateY(180deg)
-
 }
 
-.memory-card.done:hover{
+.memory-card.done:hover,
+.memory-card.flipped:hover {
     border: 0px;
     opacity: 1;
+}
+
+.memory-card.inactive {
+    pointer-events: none;
+    cursor: not-allowed;
 }
 
 .red {
     background-color: #ff5151;
 }
+
 .aqua {
     background: #034757;
 }
+
 .orange {
     background-color: #ffa41b;
 }
+
 .yellow {
     background-color: #ecce6d;
 }
+
 .green {
     background-color: #0a8543;
 }
+
 .blue {
     background-color: #040858;
 }
-.pink{
+
+.pink {
     background-color: #FF1493;
 }
+
 .purple {
     background-color: #480262;
 }
 
 .frontCard-hidden {
-    background-color: #07101f;
+    background-color: #A04747;
+}
+
+.footer {
+    margin-top: 20px;
 }
 
 @media screen and (max-width: 480px) {
-    .memory-card{
-        width:70px !important;
+    .memory-card {
+        width: 70px !important;
         height: 70px;
     }
-    
-    .footer{
-        font-size: 12px;;
+
+    .footer {
+        font-size: 12px;
+        ;
     }
 }
+
 @media screen and (max-width: 320px) {
-    .memory-card{
-        width:60px !important;
+    .memory-card {
+        width: 60px !important;
         height: 60px;
     }
 }
